@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>WebCopilot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
     <style>
@@ -111,6 +112,60 @@
             width: 100%;
             text-align: center;
         }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 17px;
+                background-color: #F6FCFF;
+            }
+
+            .container {
+                width: 95%;
+                padding-top: 10%;
+            }
+            
+            h1 {
+                font-size: 2em;
+                margin-bottom: 1em;
+            }
+
+            .input-group {
+                white-space: normal;
+            }
+
+            .input-group input {
+                font-size: 1em;
+                padding: 0.5em;
+                margin-right: 0;
+                border-radius: 0.5em;
+                width: 90%;
+                margin-bottom: 1em;
+            }
+
+            .input-group button {
+                font-size: 1em;
+                padding: 0.5em;
+                border-radius: 0.5em;
+                border: 1px solid #123da1;
+                width: 50%;                
+            }
+
+
+            button {
+                font-size: 1em;
+            }
+
+            .footer {
+                margin-top: 5em;
+                position: relative;
+                background-color: transparent;
+                border-top: 0;
+            }
+        }
+
+
+
+
     </style>
 
     <script>
