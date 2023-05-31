@@ -30,6 +30,7 @@
             margin: auto;
             text-align: center;
             padding-top: 4%;
+            min-height: 92vh;
         }
 
         h1 {
@@ -154,30 +155,23 @@
                 width: 50%;                
             }
 
-
             button {
                 font-size: 1em;
             }
 
-            .footer {
-                margin-top: 5em;
-                position: relative;
-                background-color: transparent;
-                border-top: 0;
-            }
         }
 
     </style>
 
     <script>
         window.onload = function() {
-            let textbox = document.getElementById("prompt");
-            let logo = document.getElementById("logo");
-            let button = document.getElementById("ask-button");
+            var textbox = document.getElementById("prompt");
+            var logo = document.getElementById("logo");
+            var button = document.getElementById("ask-button");
 
             function typeOutPhrase(phrase) {
-                let typingSpeed = 100; // milliseconds per character
-                let index = 0;
+                var typingSpeed = 100; // milliseconds per character
+                var index = 0;
                 textbox.spellcheck = false;
                 textbox.focus();
                 if (logo) logo.classList.add("rotate");
@@ -201,7 +195,7 @@
 
             setTimeout(function() {
                 typeOutPhrase("How do I add ChatGPT to my website?");
-            }, 750);
+            }, 500);
         }
     </script>
 
