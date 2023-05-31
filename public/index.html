@@ -90,6 +90,10 @@
             background-color: #1972F5;
             transform: scale(1.1);
         }
+        button:disabled {
+            background-color: #cccccc;
+            color: #999999;
+        }
 
         button.get-started {
             width: 300px;
@@ -163,39 +167,41 @@
             }
         }
 
-
-
-
     </style>
 
     <script>
-        function typeOutPhrase(phrase, textbox, logo) {
-            let typingSpeed = 100; // milliseconds per character
-            let index = 0;
-            textbox.spellcheck = false;
-            textbox.focus();
-            if (logo) logo.classList.add("rotate");
-
-            function typeNextCharacter() {
-                if (index < phrase.length) {
-                    textbox.value += phrase.charAt(index);
-                    index++;
-                    setTimeout(typeNextCharacter, typingSpeed);
-                }
-                else {
-                    textbox.focus();
-                    textbox.spellcheck = true;
-                    if (logo) logo.classList.remove("rotate");
-                }
-            }
-
-            typeNextCharacter();
-        }
-
         window.onload = function() {
             let textbox = document.getElementById("prompt");
             let logo = document.getElementById("logo");
-            typeOutPhrase("How do I add ChatGPT to my website?", textbox, logo);
+            let button = document.getElementById("ask-button");
+
+            function typeOutPhrase(phrase) {
+                let typingSpeed = 100; // milliseconds per character
+                let index = 0;
+                textbox.spellcheck = false;
+                textbox.focus();
+                if (logo) logo.classList.add("rotate");
+
+                function typeNextCharacter() {
+                    if (index < phrase.length) {
+                        textbox.value += phrase.charAt(index);
+                        index++;
+                        setTimeout(typeNextCharacter, typingSpeed);
+                    }
+                    else {
+                        button.disabled = false;
+                        textbox.focus();
+                        textbox.spellcheck = true;
+                        if (logo) logo.classList.remove("rotate");
+                    }
+                }
+
+                typeNextCharacter();
+            }
+
+            setTimeout(function() {
+                typeOutPhrase("How do I add ChatGPT to my website?");
+            }, 750);
         }
     </script>
 
@@ -209,11 +215,11 @@
         </h1>        
 
         <div class="input-group">
-            <input id="prompt" type="text" value="" />
-            <button>Ask Copilot</button>
+            <input id="prompt" type="text" value="" placeholder="Send a message." />
+            <button id="ask-button" disabled>Ask Copilot</button>
         </div>
 
-        <button class="get-started">Get Started</button>
+        <button id="get-started-button" class="get-started">Get Started</button>
     </div>
 
     <div class="footer">
