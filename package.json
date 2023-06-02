@@ -1,5 +1,11 @@
 {
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "scripts": {
+    "build": "tailwindcss build -i ./public/input.css -o ./public/style.css",
   }
 }
