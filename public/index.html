@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WebCopilot</title>
+    <title>web-chat.ai</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
@@ -187,6 +187,7 @@
                 var typingSpeed = 100; // milliseconds per character
                 var index = 0;
                 textbox.spellcheck = false;
+                textbox.value = "";
                 textbox.focus();
                 if (logo) logo.classList.add("rotate");
 
@@ -219,19 +220,19 @@
     <div class="container">
         <h1>
             <img id="logo" src="logo.png" />
-            <span>Web</span><span>Copilot</span>
+            <span>Chat</span><span>Maestro</span>
         </h1>        
 
         <div class="input-group">
             <input id="prompt" type="text" value="" placeholder="Send a message." />
-            <button id="ask-button" disabled>Ask Copilot</button>
+            <button id="ask-button" disabled>Ask Maestro</button>
         </div>
 
         <button id="get-started-button" class="get-started">Get Started</button>
     </div>
 
     <div class="footer">
-        © WebCopilot.ai 2023
+        © ChatMaestro.ai 2023
     </div>
 </body>
 

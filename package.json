@@ -6,6 +6,6 @@
     "tailwindcss": "^3.3.2"
   },
   "scripts": {
-    "build": "tailwindcss build -i ./public/input.css -o ./public/style.css",
+    "build": "tailwindcss build -i ./public/input.css -o ./public/style.css"
   }
 }
